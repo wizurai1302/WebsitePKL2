@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Authenticate</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'><link rel="stylesheet" href="{{ asset('assets/css/auth.css') }}">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+  <link rel="stylesheet" href="{{ asset('assets/css/auth.css') }}">
   <link rel="stylesheet" href="{{ asset('user/css/templatemo-softy-pinko.css') }}">
 </head>
 <body>
