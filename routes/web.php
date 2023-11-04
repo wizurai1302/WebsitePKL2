@@ -81,6 +81,6 @@ Route::post('/register/auth', [LoginController::class, 'register']);
 
 // Homepage Controller
 Route::get('/', [HomepageController::class, 'index'])->name('home.index');
-// Route::get('/tes', [HomepageController::class, 'tes'])->name('home.tes');
 Route::get('/jurnal', [HomepageController::class, 'jurnal'])->name('homepage.home');
 Route::get('/perusahaan', [HomepageController::class, 'perusahaan'])->name('homepage.perusahaan');
+Route::get('/perusahaan/show/{id}', [PerusahaanController::class, 'show'])->name('homepage.show');
