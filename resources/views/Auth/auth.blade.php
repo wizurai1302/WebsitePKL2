@@ -25,7 +25,7 @@
 			<span>or use your Nisn for registration</span>
 			<input type="text" name="name" placeholder="Username" required/>
 			<input type="text" name="nisn" placeholder="Nisn" required/>
-			<input type="file" name="image" placeholder="image" required/>
+			{{-- <input type="file" name="image" placeholder="image" required/> --}}
 			<input type="password" name="password" placeholder="*******" required/>
             <input type="password" name="confirm_password" id="confirm_password" name="confirmed" placeholder="Confirm Password" required>
 			<button type="submit">Sign Up</button>
@@ -75,5 +75,12 @@
   <!-- Global Init -->
   <script src="{{ asset('user/js/custom.js') }}"></script>
   @include('sweetalert::alert')
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(window).on('load', function () {
+        // Hide the preloader when the page has finished loading
+        $('#preloader').fadeOut('slow');
+    });
+</script>
 </body>
 </html>

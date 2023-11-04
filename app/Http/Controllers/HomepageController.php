@@ -41,6 +41,10 @@ class HomepageController extends Controller
     {
         return view('homepage.home.home');
     }
+    public function tes()
+    {
+        return view('Tes.index');
+    }
     /**
      * Show the form for creating a new resource.
      */

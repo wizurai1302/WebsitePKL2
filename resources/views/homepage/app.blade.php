@@ -19,6 +19,15 @@
         <link rel="stylesheet" href="{{ asset('user/css/templatemo-softy-pinko.css') }}">
     </head>
     <body class="d-flex flex-column h-100">
+                {{-- Preloader --}}
+                <div id="preloader">
+                    <div class="jumper">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                {{-- End Preloader --}}
         <main class="flex-shrink-0">
             <!-- Navigation-->
             @include('homepage.navbar')
@@ -32,5 +41,13 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="{{ ('user/js/scripts.js') }}"></script>
+        <script src="{{ asset('user/js/custom.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(window).on('load', function () {
+                // Hide the preloader when the page has finished loading
+                $('#preloader').fadeOut('slow');
+            });
+        </script>
     </body>
 </html>

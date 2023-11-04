@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Perusahaan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\LoginController;
@@ -8,7 +9,7 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PerusahaanController;
-use App\Models\Perusahaan;
+use App\Http\Controllers\ProfilePerusahaanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +62,12 @@ Route::group(['middleware' => ['auth', 'AdminMiddleware:Admin']], function () {
     Route::get('/perusahaan/edit/{id}', [PerusahaanController::class, 'edit'])->name('perusahaan.edit');
     Route::put('/perusahaan/update/{id}', [PerusahaanController::class, 'update'])->name('perusahaan.update');
     Route::delete('/perusahaan/delete/{id}', [PerusahaanController::class, 'destroy'])->name('perusahaan.destroy');
+    // Profile Perusahaan
+    Route::get('/profile/perusahaan', [ProfilePerusahaanController::class, 'index'])->name('profile.perusahaan');
+    Route::post('/profile/perusahaan/store', [ProfilePerusahaanController::class, 'store'])->name('profile.perusahaan.store');
+    Route::get('/profile/perusahaan/edit/{id}', [ProfilePerusahaanController::class, 'edit'])->name('profile.perusahaan.edit');
+    Route::put('/profile/perusahaan/update/{id}', [PerusahaanController::class, 'update'])->name('profile.perusahaan.update');
+    Route::delete('/profile/perusahaan/delete/{id}', [PerusahaanController::class, 'destroy'])->name('profile.perusahaan.destroy');
 });
 
 // Show login form
@@ -74,6 +81,6 @@ Route::post('/register/auth', [LoginController::class, 'register']);
 
 // Homepage Controller
 Route::get('/', [HomepageController::class, 'index'])->name('home.index');
+// Route::get('/tes', [HomepageController::class, 'tes'])->name('home.tes');
 Route::get('/jurnal', [HomepageController::class, 'jurnal'])->name('homepage.home');
 Route::get('/perusahaan', [HomepageController::class, 'perusahaan'])->name('homepage.perusahaan');
-Route::get('/perusahaan/show-detail-perusahaan/{id}', [PerusahaanController::class, 'show'])->name('homepage.show');

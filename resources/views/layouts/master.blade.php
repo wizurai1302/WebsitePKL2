@@ -267,6 +267,13 @@
 
   <!-- Global Init -->
   <script src="{{ asset('user/js/custom.js') }}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+      $(window).on('load', function () {
+          // Hide the preloader when the page has finished loading
+          $('#preloader').fadeOut('slow');
+      });
+  </script>
 
 
 </body>

@@ -1,0 +1,40 @@
+:root{
+    --red: #f42f25;
+    --orange: #f49725;
+    --blue: #255ff4;
+    --purple: #9725f4;
+}
+.loader{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+}
+.loader .inner_loader{
+    background: var(--red);
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    transform-origin: 50% 0;
+    animation: animate 2s ease-in-out infinite;
+}
+.loader .inner_loader:nth-child(2){
+    background: var(--orange);
+    animation-delay: 0.1s;
+}
+.loader .inner_loader:nth-child(3){
+    background: var(--blue);
+    animation-delay: 0.2s;
+}
+.loader .inner_loader:nth-child(4){
+    background: var(--purple);
+    animation-delay: 0.3s;
+}
+@keyframes animate{
+    0%, 5%, 95%, 100%{ transform: translateY(0) scaleY(1); }
+    16.7%{ transform: translateY(0) scaleY(8); }
+    28.3%, 38.3%{ transform: translateY(5.25em) scaleY(1); }
+    50%{ transform: translateY(2.625em) scaleY(4.5); }
+    61.7%, 71.7%{ transform: translateY(2.625em) scaleY(1); }
+    83.3%{ transform: translateY(0) scaleY(4.5); }
+}

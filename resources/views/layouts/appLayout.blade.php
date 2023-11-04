@@ -52,12 +52,8 @@
     @yield('content')
   </main>
 
-  <div class="fixed-plugin">
-    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
-      <i class="fa fa-cog py-2"> </i>
-    </a>
     {{-- Setting Configuration --}}
-    @include('layouts.configuration')
+    {{-- @include('layouts.configuration') --}}
     {{-- end --}}
   </div>
   <!--   Core JS Files   -->
@@ -267,6 +263,13 @@
 
   <!-- Global Init -->
   <script src="{{ asset('user/js/custom.js') }}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+      $(window).on('load', function () {
+          // Hide the preloader when the page has finished loading
+          $('#preloader').fadeOut('slow');
+      });
+  </script>
 
 
 </body>

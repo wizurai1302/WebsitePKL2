@@ -16,7 +16,7 @@
                           <span class="d-sm-inline d-none">{{ Auth::user()->name }}</span>
                         @else
                         <a href="/login">
-                         <span class="d-sm-inline d-none">Login</span>
+                         <span class="d-sm-inline d-none btn btn-outline-primary btn-sm rounded">Login</span>
                         </a>
                         @endif
                           {{-- <i class="fa fa-caret-down ml-1"></i> <!-- Ikon dropdown --> --}}
