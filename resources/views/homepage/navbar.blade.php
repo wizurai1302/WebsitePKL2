@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
     <div class="container px-5">
         <a class="navbar-brand" href="{{ route('home.index') }}"><span class="fw-bolder text-primary">Website PKL</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -8,6 +8,13 @@
                 <li class="nav-item"><a class="nav-link" href="{{ route('homepage.home') }}">Jurnal</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('homepage.perusahaan') }}">Perusahaan</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item d-block d-lg-none"> <!-- Tampil di HP (ukuran layar kecil) -->
+                    @if(Auth::check())
+                        <a href="/logout" class="nav-link">Logout</a>
+                    @else
+                        <a href="/login" class="nav-link">Login</a>
+                    @endif
+                </li>
                 <ul class="navbar-nav  justify-content-end">
                     <li class="nav-item dropdown d-flex align-items-center">
                         <a href="javascript:;" class="nav-link text-body font-weight-bold px-0" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
